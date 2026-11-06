@@ -1,0 +1,582 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+--bg: #090b16;
+--sidebar: #0d1020;
+--card: #15182a;
+--purple: #8b4dff;
+--purple-dark: #6028d9;
+--white: #ffffff;
+--muted: #999db3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+background: var(--bg);
+color: var(--white);
+font-family: 'DM Sans', sans-serif;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+button {
+font-family: inherit;
+cursor: pointer;
+}
+
+.app {
+display: flex;
+min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+width: 240px;
+min-width: 240px;
+background: var(--sidebar);
+padding: 25px 17px;
+border-right: 1px solid #252941;
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+overflow-y: auto;
+z-index: 100;
+transition: 0.3s;
+}
+
+.logo {
+display: flex;
+align-items: center;
+gap: 12px;
+font-size: 27px;
+font-weight: 800;
+letter-spacing: 2px;
+margin-bottom: 40px;
+}
+
+.logo-icon {
+width: 40px;
+height: 40px;
+background: linear-gradient(135deg, #b16bff, #5924db);
+border-radius: 12px;
+display: grid;
+place-items: center;
+font-size: 25px;
+box-shadow: 0 5px 20px #8b4dff55;
+}
+
+.sidebar nav {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.sidebar nav a {
+padding: 13px;
+border-radius: 10px;
+color: #c5c7d6;
+font-size: 14px;
+transition: 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+background: linear-gradient(100deg, #7139df, #48209c);
+color: white;
+}
+
+.category {
+margin-top: 35px;
+}
+
+.category h3 {
+font-size: 12px;
+color: #777d95;
+margin: 0 0 15px 10px;
+letter-spacing: 1px;
+}
+
+.category a {
+display: block;
+padding: 9px 12px;
+color: #aeb1c5;
+font-size: 13px;
+border-radius: 8px;
+}
+
+.category a:hover {
+background: #1c2037;
+color: white;
+}
+
+.premium-box {
+margin-top: 35px;
+padding: 16px;
+background: linear-gradient(145deg, #29164f, #17152c);
+border: 1px solid #55329b;
+border-radius: 14px;
+}
+
+.premium-box h3 {
+font-size: 14px;
+margin-bottom: 10px;
+color: #e9c879;
+}
+
+.premium-box p {
+color: #b6b1c9;
+font-size: 12px;
+line-height: 1.6;
+margin-bottom: 12px;
+}
+
+.premium-box button {
+width: 100%;
+padding: 9px;
+border: none;
+border-radius: 7px;
+color: white;
+background: #7040ce;
+font-size: 11px;
+font-weight: bold;
+}
+
+/* MAIN */
+
+.main-content {
+margin-left: 240px;
+width: calc(100% - 240px);
+padding: 0 30px;
+}
+
+/* HEADER */
+
+.header {
+height: 80px;
+display: flex;
+align-items: center;
+gap: 25px;
+border-bottom: 1px solid #252941;
+}
+
+.header-menu {
+display: flex;
+gap: 25px;
+}
+
+.header-menu a {
+color: #b9bdd0;
+font-size: 14px;
+}
+
+.header-menu a:hover {
+color: white;
+}
+
+.search {
+margin-left: auto;
+display: flex;
+align-items: center;
+background: #171a2e;
+border: 1px solid #2a2e49;
+border-radius: 30px;
+padding: 9px 15px;
+width: 260px;
+}
+
+.search input {
+width: 100%;
+background: none;
+border: none;
+outline: none;
+color: white;
+font-size: 13px;
+}
+
+.search button {
+background: none;
+border: none;
+color: white;
+font-size: 20px;
+}
+
+.login-button {
+padding: 10px 18px;
+background: #211a38;
+border: 1px solid #55329b;
+color: white;
+border-radius: 8px;
+}
+
+/* HERO */
+
+.hero {
+min-height: 380px;
+margin: 25px 0 45px;
+padding: 65px 5%;
+position: relative;
+overflow: hidden;
+border-radius: 20px;
+background:
+radial-gradient(circle at 80% 30%, #6338b5, transparent 40%),
+linear-gradient(110deg, #111426, #252052);
+border: 1px solid #393052;
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+max-width: 550px;
+}
+
+.hero-label {
+color: #bd91ff;
+font-size: 11px;
+letter-spacing: 2px;
+font-weight: bold;
+}
+
+.hero h1 {
+font-family: 'Space Grotesk', sans-serif;
+font-size: clamp(40px, 5vw, 65px);
+line-height: 1;
+margin: 20px 0;
+}
+
+.hero h1 span {
+color: #b68aff;
+}
+
+.hero p {
+color: #c4c4d5;
+font-size: 14px;
+line-height: 1.8;
+max-width: 370px;
+}
+
+.hero-buttons {
+display: flex;
+gap: 12px;
+margin-top: 25px;
+flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+display: inline-block;
+padding: 13px 19px;
+border-radius: 9px;
+font-size: 13px;
+font-weight: bold;
+transition: 0.2s;
+}
+
+.btn-primary {
+background: linear-gradient(100deg, #a34cff, #6529db);
+box-shadow: 0 8px 24px #7131d344;
+}
+
+.btn-secondary {
+border: 1px solid #ffffff44;
+background: #ffffff0b;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+transform: translateY(-3px);
+}
+
+.hero-decoration {
+position: absolute;
+right: 5%;
+top: 50%;
+transform: translateY(-50%) rotate(-12deg);
+font-size: clamp(130px, 23vw, 300px);
+font-weight: 800;
+font-family: 'Space Grotesk';
+color: #ffffff12;
+text-shadow: 0 0 70px #a16aff66;
+}
+
+/* ANIME SECTION */
+
+.anime-section {
+margin-bottom: 50px;
+}
+
+.section-header {
+display: flex;
+justify-content: space-between;
+align-items: end;
+margin-bottom: 22px;
+}
+
+.section-header span {
+color: #b78bff;
+font-size: 10px;
+letter-spacing: 2px;
+font-weight: bold;
+}
+
+.section-header h2 {
+font-family: 'Space Grotesk';
+font-size: 25px;
+margin-top: 7px;
+}
+
+.section-header > a {
+color: #bd91ff;
+font-size: 12px;
+}
+
+.anime-container {
+display: grid;
+grid-template-columns: repeat(5, minmax(0, 1fr));
+gap: 16px;
+}
+
+/* PREMIUM */
+
+.premium-section {
+padding: 30px;
+background: linear-gradient(110deg, #26164a, #15182c);
+border: 1px solid #55329b;
+border-radius: 16px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+}
+
+.premium-section span {
+color: #c69cff;
+font-size: 11px;
+letter-spacing: 2px;
+}
+
+.premium-section h2 {
+font-size: 24px;
+margin: 12px 0;
+}
+
+.premium-section p {
+color: #aaa9c0;
+font-size: 13px;
+}
+
+.premium-section button {
+background: #8b4dff;
+color: white;
+border: none;
+padding: 12px 20px;
+border-radius: 8px;
+font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+padding: 35px 0;
+margin-top: 45px;
+border-top: 1px solid #252941;
+}
+
+.footer-logo {
+font-size: 25px;
+font-weight: 800;
+letter-spacing: 2px;
+}
+
+footer p {
+color: #9296ad;
+font-size: 12px;
+margin: 8px 0;
+}
+
+footer small {
+color: #70758d;
+font-size: 10px;
+}
+
+.legal-note {
+margin-top: 10px;
+}
+
+/* MENU MOBILE */
+
+#menuButton {
+display: none;
+background: none;
+border: none;
+color: white;
+font-size: 23px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px) {
+.anime-container {
+grid-template-columns: repeat(4, 1fr);
+}
+}
+
+@media(max-width:800px) {
+
+.sidebar {
+    transform: translateX(-100%);
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 16px;
+}
+
+#menuButton {
+    display: block;
+}
+
+.header {
+    gap: 12px;
+    height: 65px;
+}
+
+.header-menu {
+    display: none;
+}
+
+.search {
+    width: auto;
+    flex: 1;
+}
+
+.hero {
+    min-height: 340px;
+    padding: 45px 22px;
+}
+
+.hero-decoration {
+    right: -10%;
+    opacity: 0.5;
+}
+
+.anime-container {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+}
+
+@media(max-width:520px) {
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero {
+    min-height: 320px;
+}
+
+.anime-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.premium-section {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.section-header h2 {
+    font-size: 21px;
+}
+
+.login-button {
+    padding: 9px 11px;
+    font-size: 11px;
+}
+
+}
+/* DETAIL ANIME */
+.nezu-modal {
+backdrop-filter: blur(8px);
+}
+
+.nezu-modal-content {
+border: 1px solid #392b54;
+box-shadow: 0 15px 60px rgba(0,0,0,.6);
+animation: nezuAppear .25s ease;
+}
+
+.nezu-modal-content img {
+max-height: 400px;
+object-fit: contain;
+}
+
+.modal-info h2 {
+font-size: 26px;
+color: #c4a5ff;
+}
+
+.modal-info p {
+line-height: 1.7;
+color: #ddd;
+}
+
+.modal-info button {
+cursor: pointer;
+transition: .2s;
+}
+
+.modal-info button:hover {
+background: #a78bfa;
+transform: scale(1.03);
+}
+
+.favorite-button {
+cursor: pointer;
+}
+
+.favorite-button.active {
+color: #ff4f87;
+}
+
+.anime-card {
+transition: transform .25s ease;
+}
+
+.anime-card:hover {
+transform: translateY(-6px);
+}
+
+.anime-image {
+cursor: pointer;
+}
+
+@keyframes nezuAppear {
+from {
+opacity: 0;
+transform: translateY(15px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
